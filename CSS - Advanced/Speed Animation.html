@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Keyframes Speed Demo</title>
+  <style>
+    /* Fast + Slow Rotation (10s total, 5 spins) */
+    @keyframes spinControl {
+      0%   { transform: rotate(0deg); }
+      50%  { transform: rotate(1440deg); } /* 4 spins in first 5s */
+      100% { transform: rotate(1800deg); } /* 1 spin in last 5s */
+    }
+    .spin {
+      width: 120px;
+      height: 120px;
+      background: orange;
+      margin: auto;
+      text-align: center;
+      line-height: 120px;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      animation: spinControl 10s linear infinite;
+    }
+
+    /* Fade In */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .fade {
+      animation: fadeIn 3s ease-in forwards;
+    }
+
+    /* Move */
+    @keyframes moveBox {
+      0%   { transform: translateX(0); }
+      50%  { transform: translateX(200px); }
+      100% { transform: translateX(0); }
+    }
+    .move {
+      animation: moveBox 4s infinite alternate;
+    }
+
+    /* Zoom */
+    @keyframes zoomInOut {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.5); }
+      100% { transform: scale(1); }
+    }
+    .zoom {
+      animation: zoomInOut 3s ease-in-out infinite;
+    }
+
+    /* Color Change */
+    @keyframes colorChange {
+      0%   { background-color: red; }
+      25%  { background-color: orange; }
+      50%  { background-color: yellow; }
+      75%  { background-color: green; }
+      100% { background-color: blue; }
+    }
+    .color {
+      animation: colorChange 6s infinite alternate;
+    }
+
+    /* Bounce */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-50px); }
+    }
+    .bounce {
+      animation: bounce 2s infinite;
+    }
+
+    /* Gradient Background */
+    @keyframes gradientBg {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .gradient {
+      background: linear-gradient(270deg, #ff0000, #00ff00, #0000ff);
+      background-size: 600% 600%;
+      animation: gradientBg 10s ease infinite;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+@keyframes typing {
+  from { width: 0; opacity: 0.2; }
+  to   { width: 100%; opacity: 1; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.typing {
+  overflow: hidden;
+  white-space: pre-wrap;          /* multiple lines allowed */
+  border-right: 3px solid black;  /* cursor effect */
+  width: 0;
+}
+
+
+    /* Common Box Style */
+    .box {
+      width: 150px;
+      height: 150px;
+      margin: 20px auto;
+      display: block;
+      text-align: center;
+      line-height: 150px;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      background: #FF8C00;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">CSS Keyframes Speed Demo</h1>
+
+  <div class="spin">Spin Control</div>
+
+  <br><br>
+
+  <div class="box fade">Fade In</div>
+
+  <br><br>
+
+  <div class="box move">Move</div>
+
+  <br><br>
+
+  <div class="box zoom">Zoom</div>
+
+  <br><br>
+
+  <div class="box color">Color</div>
+
+  <br><br>
+
+  <div class="box bounce">Bounce</div>
+
+  <br><br>
+
+  <div class="gradient">Gradient Background Animation</div>
+
+  <br><br>
+
+  <h2 class="typing">IDAI Universe of Cosmos where innovation meets the ultimate trust, connecting the future with present as a covenant of guardianship</h2>
+</body>
+<script>
+  // যখন element viewport এ আসবে তখন animation চালু হবে
+  const typingElements = document.querySelectorAll('.typing');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 
+          "typing 5s steps(50, end) forwards, blink 0.7s step-end infinite";
+        observer.unobserve(entry.target); // একবার চালু হলে আবার repeat হবে না
+      }
+    });
+  });
+
+  typingElements.forEach(el => observer.observe(el));
+</script>
+
+</html>
+

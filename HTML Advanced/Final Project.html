@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IDAI Universe - Final Project</title>
+  <meta name="description" content="Explore the IDAI Universe — innovation, trust, and guardianship.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>IDAI Universe</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#news">News</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Home Section -->
+    <section id="home">
+      <h2>Welcome</h2>
+      <p>Discover innovation and guardianship in the IDAI Universe.</p>
+      <img src="idai-logo.png" alt="IDAI Universe Logo">
+    </section>
+
+    <!-- News Article -->
+    <article id="news">
+      <h2>Latest News</h2>
+      <p>Red Marshal announces new fleet expansion.</p>
+    </article>
+
+    <!-- Gallery with Multimedia -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <video controls width="400">
+        <source src="idai-intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <audio controls>
+        <source src="idai-theme.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
+    <!-- Aside Section -->
+    <aside>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#support">Support</a></li>
+      </ul>
+    </aside>
+
+    <!-- Form Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <fieldset>
+          <legend>Personal Information</legend>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </fieldset>
+        
+        <fieldset>
+          <legend>Upload Resume</legend>
+          <input type="file" name="resume" accept=".pdf,.doc,.docx">
+        </fieldset>
+        
+        <input type="hidden" name="userID" value="12345">
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- HTML5 APIs -->
+    <section id="apis">
+      <h2>HTML5 APIs Demo</h2>
+      <canvas id="myCanvas" width="200" height="100" style="border:1px solid black;"></canvas>
+      <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+      </svg>
+      <iframe src="https://rayaantasnim.github.io/IDAI-all-link/Home.html" 
+              width="400" height="300" title="IDAI Universe Home"></iframe>
+      <p>Task Progress:</p>
+      <progress value="60" max="100">60%</progress>
+      <p>Battery Level:</p>
+      <meter value="0.8" min="0" max="1">80%</meter>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 IDAI Universe | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timing Functions Demo</title>
+  <style>
+    /* Keyframes: Move Right */
+    @keyframes moveRight {
+      from { transform: translateX(0); }
+      to   { transform: translateX(250px); }
+    }
+
+    .box {
+      width: 120px;
+      height: 120px;
+      margin: 20px;
+      display: inline-block;
+      text-align: center;
+      line-height: 120px;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      background: #FF8C00;
+    }
+
+    /* Different Timing Functions */
+    .linear {
+      animation: moveRight 4s linear infinite alternate;
+    }
+
+    .ease {
+      animation: moveRight 4s ease infinite alternate;
+    }
+
+    .ease-in {
+      animation: moveRight 4s ease-in infinite alternate;
+    }
+
+    .ease-out {
+      animation: moveRight 4s ease-out infinite alternate;
+    }
+
+    .ease-in-out {
+      animation: moveRight 4s ease-in-out infinite alternate;
+    }
+
+    .bezier {
+      /* Custom cubic-bezier curve */
+      animation: moveRight 4s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+    }
+
+    h2 {
+      text-align: center;
+      color: #FF4500;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">CSS Timing Functions Demo</h1>
+
+  <h2>Linear</h2>
+  <div class="box linear">Linear</div>
+
+  <br><br>
+
+  <h2>Ease</h2>
+  <div class="box ease">Ease</div>
+
+  <br><br>
+
+  <h2>Ease-In</h2>
+  <div class="box ease-in">Ease-In</div>
+
+  <br><br>
+
+  <h2>Ease-Out</h2>
+  <div class="box ease-out">Ease-Out</div>
+
+  <br><br>
+
+  <h2>Ease-In-Out</h2>
+  <div class="box ease-in-out">Ease-In-Out</div>
+
+  <br><br>
+
+  <h2>Custom Cubic-Bezier</h2>
+  <div class="box bezier">Bezier</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Multi media training </title>
+</head>
+<body>
+
+<center>
+
+<main>
+<img src="E:\IDAI company\IDAI - Main Disk\IDAI-Logo.jpg" alt="IDAI Main logo" width = "400", height="auto"><br><br>
+
+<video id="myVideo" width="400" controls autoplay loop muted>
+  <source src="Nasheed Shukran Laka Rabbi.mp4" type="video/mp4">
+</video><br><br>
+
+<button onclick="unmuteVideo()">Play with Sound</button><br><br>
+
+
+<audio controls>
+  <source src="E:\Songs\The Lion's Light (1).mp3" type="audio/mpeg">
+</audio><br><br>
+
+</main>
+
+</center>
+
+<script>
+  function unmuteVideo() {
+    const video = document.getElementById('myVideo');
+    video.muted = false;   // সাউন্ড চালু হবে
+    video.play();          // আবার চালু হবে
+  }
+</script>
+
+</body>
+</html>

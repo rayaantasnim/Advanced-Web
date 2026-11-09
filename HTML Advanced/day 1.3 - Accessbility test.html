@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A11y Demo Page</title>
+</head>
+<body>
+
+  <!-- Header with navigation -->
+  <header>
+    <h1>IDAI Universe</h1>
+    <nav aria-label="Main Navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main>
+  	<center>
+    <section id="home">
+      <h2>Welcome</h2>
+      <p>Explore the IDAI Universe with accessible design.</p>
+      <img src="E:\IDAI company\IDAI - Main Disk\The opening render for IDAI.png" alt="IDAI Universe Lion Emblem" width="300">
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p role="note">We believe in inspiring trust through innovation.</p>
+    </section>
+
+    <!-- Accessible form -->
+    <section id="contact">
+      <h2>Contact Form</h2>
+      <form action="/submit" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@domain.com" required><br><br>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+        <button type="submit">Send</button>
+      </form>
+    </section></center>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 IDAI Universe. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

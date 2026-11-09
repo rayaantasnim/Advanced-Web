@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Refined Motion Demo</title>
+  <style>
+    body {
+      overflow-x: hidden; /* prevent horizontal scroll */
+    }
+
+    @keyframes moveAcross {
+      from { transform: translateX(0); }
+      to   { transform: translateX(calc(100vw - 120px)); } /* box stays inside */
+    }
+
+    .box {
+      width: 120px;
+      height: 120px;
+      background: #FF4500;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      line-height: 120px;
+      border-radius: 10px;
+      margin: 20px;
+    }
+
+    /* Smooth Accelerate + Decelerate */
+    .smooth-motion {
+      animation: moveAcross 6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    }
+
+    /* Spring / Overshoot Effect */
+    .spring-motion {
+      animation: moveAcross 6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+    }
+
+    /* Accelerate Only */
+    .accelerate {
+      animation: moveAcross 6s ease-in forwards;
+    }
+
+    /* Decelerate Only */
+    .decelerate {
+      animation: moveAcross 6s ease-out forwards;
+    }
+
+    h2 {
+      text-align: center;
+      color: #FF4500;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">Refined Motion Across Screen</h1>
+
+  <h2>Smooth Accelerate + Decelerate</h2>
+  <div class="box smooth-motion">Smooth</div>
+
+  <br><br>
+
+  <h2>Spring / Overshoot Effect</h2>
+  <div class="box spring-motion">Spring</div>
+
+  <br><br>
+
+  <h2>Accelerate Only</h2>
+  <div class="box accelerate">Accelerate</div>
+
+  <br><br>
+
+  <h2>Decelerate Only</h2>
+  <div class="box decelerate">Decelerate</div>
+</body>
+</html>

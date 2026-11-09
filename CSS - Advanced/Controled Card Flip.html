@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Controlled Card Flip</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #222;
+    }
+
+    .card {
+      width: 200px;
+      height: 300px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      animation: flipSequence 6s ease-in-out forwards; /* auto flip twice */
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      color: white;
+    }
+
+    .front { background: crimson; }
+    .back  { background: teal; transform: rotateY(180deg); }
+
+    /* Flip class controlled by JS */
+    .flipped {
+      transform: rotateY(180deg);
+    }
+
+    @keyframes flipSequence {
+      0%   { transform: rotateY(0); }
+      50%  { transform: rotateY(180deg); } /* after 3s */
+      100% { transform: rotateY(0); }      /* after 6s */
+    }
+
+    @media (max-width:1100px){
+        .inner{
+            div{
+                min-width:90% !important;
+                width: 95%;
+                min-height: 300px !important;
+                height: auto !important;
+            }
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="inner">
+      <div class="front"><center>IDAI Universe of Cosmos</center></div>
+      <div class="back"><center>IDAI Sovereign State of Green Antarctica</center></div>
+    </div>
+  </div>
+
+  <script>
+    const card = document.querySelector('.card');
+    const inner = document.querySelector('.inner');
+
+    // After auto animation ends (6s), remove animation so only JS works
+    setTimeout(() => {
+      inner.style.animation = 'none';
+    }, 6000);
+
+    // Toggle flip on click/tap
+    card.addEventListener('click', () => {
+      inner.classList.toggle('flipped');
+    });
+  </script>
+</body>
+</html>
